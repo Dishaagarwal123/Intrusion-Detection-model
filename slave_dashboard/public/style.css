@@ -1,0 +1,14 @@
+.packet {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+.heading {
+  font-style: italic;
+  font-size: xx-large;
+  color: white;
+  background-color: rgb(15, 96, 188);
+  text-align: center;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}

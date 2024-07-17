@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading">Intrusion Detection</h1>
+    <div style="display: flex;justify-content: space-around;">
+      <div style="width: 80%;">
+        <% for(let i=0;i<data.length;i++) {%>
+          <a href="/packet/<%=i%>">
+        <div class="packet" style=" background-color: <%= color[data[i][' Label']] %>;">
+          <p><b>IP address : </b> <%= data[i][' source IP'] %></p>
+          <p><b>Source port : </b> <%= data[i][' source port'] %></p>
+          <p><b>Type : </b> <%= data[i][' Label'] %></p>
+        </div>
+        </a>
+        <% } %> 
+      </div>
+      <div style="width: 10%;" class="packet">
+        <% let values = new Set();
+            for(let packet of data) {
+              if(packet[' Label']!='NORMAL'){
+                values.add(packet[' source IP']);
+              }
+          } %>
+          <% for(let item of values){%>
+            <p style="text-align: center;"><%= item %></p>
+            <% } %>
+      </div>
+    </div>
+    
+  </body>
+</html>
